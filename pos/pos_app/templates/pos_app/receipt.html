@@ -1,0 +1,35 @@
+<!-- receipt.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Receipt</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product, quantity in cart.items %}
+                <tr>
+                    <td>{{ product }}</td>
+                    <td>{{ quantity }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <th>Total</th>
+                    <td>${{ total }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
