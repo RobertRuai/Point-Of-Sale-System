@@ -1,7 +1,4 @@
 from django.db import models
-
-
-from django.db import models
 from django.forms import model_to_dict
 
 
@@ -21,7 +18,7 @@ class Category(models.Model):
 
     class Meta:
         # Table's name
-        db_table = "Category"
+        app_label = "Category"
         verbose_name_plural = "Categories"
 
     def __str__(self) -> str:
@@ -48,7 +45,7 @@ class Product(models.Model):
 
     class Meta:
         # Table's name
-        db_table = "Product"
+        app_label = "Product"
 
     def __str__(self) -> str:
         return self.name

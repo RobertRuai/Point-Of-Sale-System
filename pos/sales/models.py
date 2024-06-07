@@ -16,7 +16,7 @@ class Sale(models.Model):
     amount_change = models.FloatField(default=0)
 
     class Meta:
-        db_table = 'Sales'
+        app_label = 'Sales'
 
     def __str__(self) -> str:
         return "Sale ID: " + str(self.id) + " | Grand Total: " + str(self.grand_total) + " | Datetime: " + str(self.date_added)
@@ -36,7 +36,7 @@ class SaleDetail(models.Model):
     total_detail = models.FloatField()
 
     class Meta:
-        db_table = 'SaleDetails'
+        app_label = 'SaleDetails'
 
     def __str__(self) -> str:
         return "Detail ID: " + str(self.id) + " Sale ID: " + str(self.sale.id) + " Quantity: " + str(self.quantity)

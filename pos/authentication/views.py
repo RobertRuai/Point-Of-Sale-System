@@ -5,9 +5,6 @@ from django.contrib import messages
 
 
 def register_user(request):
-    msg = None
-    success = False
-
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
@@ -18,14 +15,14 @@ def register_user(request):
 
             messages.succes(request, 'User created - please <a href="/login">login</a>.')
 
-            # return redirect("/login/")
+            return redirect("/login/")
 
         else:
             messages.error(request, 'Form is not valid')
     else:
         form = SignUpForm()
 
-    return render(request, "accounts/register.html", {"form": form})
+    return render(request, "authentication/register.html", {"form": form})
 
 
 def login_view(request):
@@ -44,6 +41,6 @@ def login_view(request):
             else:
                 messages.error(request, 'Invalid username or password!')
         else:
-            messages.eror(request, 'An error occurred!.')
+            messages.error(request, 'An error occurred!.')
 
-    return render(request, "accounts/login.html", {"form": form})
+    return render(request, "authentication/login.html", {"form": form})

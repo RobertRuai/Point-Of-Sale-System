@@ -9,7 +9,7 @@ class Customer(models.Model):
     phone = models.CharField(max_length=30, blank=True, null=True)
 
     class Meta:
-        db_table = 'Customers'
+        app_label = 'Customers'
 
     def __str__(self) -> str:
         return self.first_name + " " + self.last_name

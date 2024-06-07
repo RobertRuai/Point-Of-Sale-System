@@ -10,7 +10,7 @@ from django.forms.widgets import PasswordInput, TextInput, EmailInput
 
 
 # - Register/Create a user
-class CreateUserForm(UserCreationForm):
+class SignUpForm(UserCreationForm):
     email = forms.EmailField(widget=EmailInput())
     class Meta:
         model = User
